@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "AppSumo Product Title Scraper",
+  "version": "1.0.0",
+  "description": "Easily collect product titles from AppSumo.com and export them to CSV.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "downloads",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.appsumo.com/*"
+  ],
+  "background": {
+    "service_worker": "background_service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.appsumo.com/*"],
+      "js": ["content_script_appsumo.js"],
+      "css": []
+    }
+  ],
+  "action": {
+    "default_popup": "popup_ui.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  }
+}
